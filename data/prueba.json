@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "user": {
+    "id": 123,
+    "username": "juanperez",
+    "role": "admin"
+  }
+}
+
+{
+  "status": "error",
+  "message": "Usuario o contraseña incorrectos"
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Lista de Pacientes y Exámenes </title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!---------------- Login Section ------------------>
+  <div id="login-container" class="login-container">
+    <div class="login-form">
+      <h2>Iniciar Sesión</h2>
+      <form id="login-form">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" required>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" required>
+        <button type="submit">Ingresar</button>
+      </form>
+      <div id="login-error" class="error" style="display:none;">Credenciales incorrectas.</div>
+    </div>
+  </div>
+  <!-------------------------------------------------------------->
+  <div id="main-content" style="display:none;">
+
+  <header class="site-header">
+    <h1>Pacientes y Exámenes Médicos (PDF)</h1>
+    <p class="subtitle">Página ordenada para listar pacientes y enlaces a exámenes medicos</p>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <input id="search" type="search" placeholder="Buscar por Nombre o ID" />
+    </section>
+
+    <section id="patients" class="patients"></section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Coloque los archivos PDF dentro de la carpeta <code>pdfs/</code> y actualice los nombres en <code>data/patients.json</code>.</small>
+  </footer>
+  
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

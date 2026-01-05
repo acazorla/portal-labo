@@ -1,0 +1,83 @@
+{
+  "patients": [
+    {
+      "id": "PAC-001",
+      "fechaAtencion": "2025-11-20",
+      "nombrePaciente": "Ana Martínez",
+      "fechaNacimiento": "1988-04-12",
+      "sexo": "F",
+      "examenes": [
+        {"nombre":"Hemograma completo","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_hemograma.pdf"},
+        {"nombre":"Orina completo","fecha":"2025-11-21","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"},
+        {"nombre":"Radiografía tórax","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"},
+        {"nombre":"Resonancia magnética","fecha":"2025-09-15","rutaExamen":"../pdfs/luis_gomez_rm.pdf"}
+      ]
+    },
+    {
+      "id": "PAC-002",
+      "fechaAtencion": "2025-09-15",
+      "nombrePaciente": "Luis Gómez",
+      "fechaNacimiento": "1975-02-01",
+      "sexo": "M",
+      "examenes": [
+        {"nombre":"Hemograma completo","fecha":"2025-09-15","rutaExamen":"../pdfs/luis_gomez_rm.pdf"},
+        {"nombre":"Resonancia magnética","fecha":"2025-09-15","rutaExamen":"../pdfs/luis_gomez_rm.pdf"}
+      ]
+    },
+    {
+      "id": "PAC-003",
+      "fechaAtencion": "2025-09-15",
+      "nombrePaciente": "Carla Ruiz",
+      "fechaNacimiento": "1992-07-30",
+      "sexo": "F",
+      "examenes": []
+    },
+    {
+      "id": "PAC-004",
+      "fechaAtencion": "2025-12-01",
+      "nombrePaciente": "Alex Cazorla",
+      "fechaNacimiento": "1983-03-02",
+      "sexo": "M",
+      "examenes": [
+        {"nombre":"Hemograma completo","fecha":"2025-12-01","rutaExamen":"../pdfs/luis_gomez_rm.pdf"},
+        {"nombre":"Resonancia magnética","fecha":"2025-12-01","rutaExamen":"../pdfs/luis_gomez_rm.pdf"}
+      ]
+    },
+    {
+      "id": "PAC-005",
+      "fechaAtencion": "2025-11-19",
+      "nombrePaciente": "Julia Rojas",
+      "fechaNacimiento": "1992-06-11",
+      "sexo": "F",
+      "examenes": [
+        {"nombre":"Hemograma completo","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_hemograma.pdf"},
+        {"nombre":"Orina completo","fecha":"2025-11-21","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"},
+        {"nombre":"Radiografía tórax","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"}
+      ]
+    },    
+    {
+      "id": "PAC-006",
+      "fechaAtencion": "2025-11-18",
+      "nombrePaciente": "Amelia Gutierrez",
+      "fechaNacimiento": "1988-04-12",
+      "sexo": "F",
+      "examenes": [
+        {"nombre":"Hemograma completo","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_hemograma.pdf"},
+        {"nombre":"Orina completo","fecha":"2025-11-21","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"},
+        {"nombre":"Radiografía tórax","fecha":"2025-11-20","rutaExamen":"../pdfs/radiografia.jpg"}
+      ]
+    },
+    {
+      "id": "PAC-007",
+      "fechaAtencion": "2025-11-20",
+      "nombrePaciente": "Roberto Martínez",
+      "fechaNacimiento": "1960-07-07",
+      "sexo": "M",
+      "examenes": [
+        {"nombre":"Hemograma completo","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_hemograma.pdf"},
+        {"nombre":"Orina completo","fecha":"2025-11-21","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"},
+        {"nombre":"Radiografía tórax","fecha":"2025-11-20","rutaExamen":"../pdfs/diagrama.jpg"}
+      ]
+    }
+  ]
+}
