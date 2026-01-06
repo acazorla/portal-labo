@@ -22,12 +22,39 @@
     </div>
   </div>
   <!-------------------------------------------------------------->
+  
   <div id="main-content" style="display:none;">
 
   <header class="site-header">
     <h1>Pacientes y Exámenes Médicos (PDF)</h1>
+    <button id="change-password-btn">Cambiar Contraseña</button>
     <p class="subtitle">Página ordenada para listar pacientes y enlaces a exámenes medicos</p>
   </header>
+
+    <!-- Change Password Form (hidden initially) -->
+    <div id="change-password-container" style="display:none;">
+      <div class="change-password-form">
+        <h3>Cambiar Contraseña</h3>
+        <form id="change-password-form">
+          <label for="new-password">Nueva Contraseña:</label>
+          <input type="password" id="new-password" required>
+          <div id="password-requirements" class="requirements">
+            <p>Requisitos:</p>
+            <ul>
+              <li id="req-length">Al menos 8 caracteres</li>
+              <li id="req-uppercase">Al menos una mayúscula</li>
+              <li id="req-number">Al menos un número</li>
+              <li id="req-special">Al menos un carácter especial (!@#$%^&* etc.)</li>
+            </ul>
+          </div>
+          <button type="submit">Cambiar</button>
+          <button type="button" id="cancel-change-btn">Cancelar</button>
+
+        </form>
+        <div id="change-error" class="error" style="display:none;">Error al cambiar contraseña.</div>
+        <div id="change-success" class="success" style="display:none;">Contraseña cambiada exitosamente.</div>
+      </div>
+    </div>
 
   <main class="container">
     <section class="controls">

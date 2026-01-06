@@ -138,5 +138,96 @@ if(searchInput){
     renderPatients(filtered);
   });
 }
+//------------------------------------------------------------------------------------------------------
+// Password validation regex
+const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
 
+// Function to validate password and update UI
+function validatePassword(password) {
+  const reqLength = document.getElementById('req-length');
+  const reqUppercase = document.getElementById('req-uppercase');
+  const reqNumber = document.getElementById('req-number');
+  const reqSpecial = document.getElementById('req-special');
+
+  const isValid = passwordRegex.test(password);
+  reqLength.className = password.length >= 8 ? 'valid' : '';
+  reqUppercase.className = /[A-Z]/.test(password) ? 'valid' : '';
+  reqNumber.className = /\d/.test(password) ? 'valid' : '';
+  reqSpecial.className = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password) ? 'valid' : '';
+  return isValid;
+}
+
+// Change password logic
+const changePasswordBtn = document.getElementById('change-password-btn');
+const changePasswordContainer = document.getElementById('change-password-container');
+const changePasswordForm = document.getElementById('change-password-form');
+const newPasswordInput = document.getElementById('new-password');
+const changeError = document.getElementById('change-error');
+const changeSuccess = document.getElementById('change-success');
+const cancelChangeBtn = document.getElementById('cancel-change-btn');
+
+if (changePasswordBtn) {
+  changePasswordBtn.addEventListener('click', () => {
+    changePasswordContainer.style.display = 'block';
+  });
+}
+
+if (cancelChangeBtn) {
+  cancelChangeBtn.addEventListener('click', () => {
+    changePasswordContainer.style.display = 'none';
+    changePasswordForm.reset();
+    changeError.style.display = 'none';
+    changeSuccess.style.display = 'none';
+  });
+}
+
+if (newPasswordInput) {
+  newPasswordInput.addEventListener('input', (e) => {
+    validatePassword(e.target.value);
+  });
+}
+
+if (changePasswordForm) {
+  changePasswordForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const newPassword = newPasswordInput.value.trim();
+    
+    if (validatePassword(newPassword)) {
+      const hashedPassword = await hashPassword(newPassword);
+      // Simulate saving to localStorage (in production, send to server)
+      const currentUser = 'admin'; // Assuming logged-in user; adjust if needed
+      let users = JSON.parse(localStorage.getItem('users')) || await loadUsers();
+      const userIndex = users.findIndex(u => u.userName === currentUser);
+      if (userIndex !== -1) {
+        users[userIndex].password = hashedPassword;
+        localStorage.setItem('users', JSON.stringify(users));
+        changeSuccess.style.display = 'block';
+        changeError.style.display = 'none';
+        changePasswordForm.reset();
+        changePasswordContainer.style.display = 'none';
+      } else {
+        changeError.style.display = 'block';
+      }
+    } else {
+      changeError.style.display = 'block';
+    }
+  });
+}
+
+// Modify loadUsers to check localStorage first (for simulation)
+async function loadUsers() {
+  const storedUsers = localStorage.getItem('users');
+  if (storedUsers) {
+    return JSON.parse(storedUsers);
+  }
+  try {
+    const res = await fetch('data/users.json');
+    const data = await res.json();
+    return data.users || [];
+  } catch (e) {
+    console.error('Error loading users:', e);
+    return [];
+  }
+}
+//------------------------------------------------------------------------------------------------------
 loadPatients();

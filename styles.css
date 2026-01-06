@@ -79,3 +79,44 @@ body{font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var
   margin-top: 10px;
   text-align: center;
 }
+ 
+
+
+.change-password-form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.requirements ul {
+  list-style: none;
+  padding: 0;
+}
+
+.requirements li {
+  color: red;
+}
+
+.requirements li.valid {
+  color: green;
+}
+
+.success {
+  color: green;
+  margin-top: 10px;
+}
+
+.requirements ul {
+  list-style: none;
+  padding: 0;
+}
+
+.requirements li {
+  color: red; /* Rojo por defecto para no cumplidos */
+}
+
+.requirements li.valid {
+  color: green; /* Verde cuando cumplido */
+}
